@@ -7,7 +7,7 @@ struct data{
 	int r;// basic reproduction number
 };
 
-data city[10000][10000];
+data city[200][200];
 int m, n;
 float line_m, line_k;
 
@@ -29,6 +29,7 @@ void ABchange(int xa, int ya, int xb, int yb, int w, int tab){
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(0);
+	//freopen("2_1.in","r",stdin);
 	//freopen("1.txt","r",stdin);
 	// initialize
 	int d, s, k;
@@ -69,11 +70,12 @@ int main(){
 			ABchange(xa,ya,xb,yb,w,tab);//a move to b
 			//build line : line_m*x - y = line_k
 			line_m = (f_xb+1 - f_xa)/(f_yb+1 - f_ya);
-			line_k = line_m * f_xa - f_ya;
+			line_k = line_m * f_ya - f_xa;
 			// cross city (city c)
 			now = xa;
+
 			for(int i = ya+1; i <= yb+1; i++){
-				pre = now;
+				pre = (int)now;
 				now = line_m * i - line_k;
 				for(int j = pre; j< now; j++){
 					//cout << tab * (k/1000) * ((city[i][j].p - city[i][j].t)/city[i][j].p) <<endl;

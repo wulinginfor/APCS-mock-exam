@@ -14,8 +14,8 @@ protected:
     void InputFormat() {
         LINE(m, n, s, d, k);
         GRID(B) % SIZE(100, 100);
-        LINES(si, sj, st) % SIZE(1e4);
-		GRID(C) % SIZE(d, 50001);
+        LINES(si, sj, st) % SIZE(1e3);
+		GRID(C) % SIZE(d, 5001);
     }
 
     void OutputFormat() {
@@ -36,17 +36,17 @@ protected:
     }
 
     void gen_si(){
-    	for(int i=0;i<1e4;i++){
+    	for(int i=0;i<1e3;i++){
     		si.push_back(rnd.nextInt(0,(int)1e2-1));
 		}
 	}
     void gen_sj(){
-    	for(int i=0;i<1e4;i++){
+    	for(int i=0;i<1e3;i++){
     		sj.push_back(rnd.nextInt(0,(int)1e2-1));
 		}
 	}
     void gen_st(){
-    	for(int i=0;i<1e4;i++){
+    	for(int i=0;i<1e3;i++){
     		st.push_back(rnd.nextInt((int)1e2,(int)1e3));
 		}
 	}
@@ -65,8 +65,8 @@ protected:
 		for(int i = 0;i<d;i++){
 			vector<int> f;
 			// if(i % 1000 == 0) cout << i << endl;
-			f.push_back((int)1e4);
-			for(int j = 0;j<1e4;j++){
+			f.push_back((int)1e3);
+			for(int j = 0;j<1e3;j++){
 				xa = rnd.nextInt(0,(int)1e2-2);
 				ya = rnd.nextInt(0,(int)1e2-2);
 				xb = rnd.nextInt(xa,(int)1e2-1);
@@ -81,10 +81,10 @@ protected:
 	}
     void TestCases() {
 		for(int i=0;i<6;i++){
-			CASE(m = n = 1e2, s = 1e4, d = 2, k = rnd.nextInt(1, 1e3), gen_B(), gen_si(), gen_sj(), gen_st(), gen_C(d));
+			CASE(m = n = 1e2, s = 1e3, d = 2, k = rnd.nextInt(1, 1e3), gen_B(), gen_si(), gen_sj(), gen_st(), gen_C(d));
 		}
     	for(int i=0;i<14;i++){			
-			CASE(m = n = 1e2, s = 1e4, d = rnd.nextInt(1e2, 1e4), k = rnd.nextInt(1, 1e3), gen_B(), gen_si(), gen_sj(), gen_st(), gen_C(d));   		
+			CASE(m = n = 1e2, s = 1e3, d = rnd.nextInt(1e2, 1e3), k = rnd.nextInt(1, 1e3), gen_B(), gen_si(), gen_sj(), gen_st(), gen_C(d));   		
 		}
 
     }
