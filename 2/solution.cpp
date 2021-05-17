@@ -29,7 +29,7 @@ void ABchange(int xa, int ya, int xb, int yb, int w, int tab){
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(0);
-	freopen("1.txt","r",stdin);
+	//freopen("1.txt","r",stdin);
 	// initialize
 	int d, s, k;
 	int tmp_i, tmp_j;
@@ -81,7 +81,7 @@ int main(){
 					city[j][i-1].t = min(city[j][i-1].t + (tab * k)/1000,city[j][i-1].p);
 				}
 			}
-			cout <<"p:"<<endl;
+			/*cout <<"p:"<<endl;
 			for(int i = 0; i < m; i ++){
 				for(int j = 0; j < n; j ++){
 				cout << city[i][j].p <<" ";
@@ -94,16 +94,14 @@ int main(){
 				cout << city[i][j].t <<" ";
 				}
 				cout <<endl;
-			}
+			}*/
 		}
 	}
 	int total = 0;
 	for(int i = 0; i < m; i ++){
 		for(int j = 0; j < n; j ++){
 			total += city[i][j].t;
-			cout << city[i][j].t <<" ";
 		}
-		cout <<endl;
 	}
 	cout << total <<endl;	
 	
