@@ -1,3 +1,13 @@
-*.out
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+
+# *.out
 *.exe
 .vscode
