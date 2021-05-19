@@ -117,10 +117,11 @@ int main () {
     w.resize(n);
     adj.resize(n);
     rev.resize(n);
-    out.resize(n, 0);
-    ind.resize(n, 0);
+    out.resize(n, 0); // 出度
+    ind.resize(n, 0); // 入度
     total.resize(n, -1);
     vis.resize(n, false);
+    
     for(int i=0;i<n;i++) cin >> w[i], total[i] = w[i];
 
     int a, b;
